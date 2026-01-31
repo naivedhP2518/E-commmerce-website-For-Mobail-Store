@@ -22,7 +22,7 @@ LIVE🔴 🔗 **Live Demo:** ([https://naivedhp2518.github.io/E-commmerce-websit
 - **JavaScript** – Interactivity  
 - **AOS Library** – Scroll animations
 
-## � Folder Structure
+## 📁 Folder Structure
 
 ```
 E-commmerce-website/
