@@ -24,11 +24,9 @@ LIVE🔴 🔗 **Live Demo:** ([https://naivedhp2518.github.io/E-commmerce-websit
 
 ---
 
-## 📸 Screenshots  
-![Website Image 1](assets/images/Websiteimage1.png)
-![Website Image 2](assets/images/Websiteimage2.png)
-![Website Image 3](assets/images/Websiteimage3.png)
-![Website Image 4](assets/images/Websiteimage4.png)
+| Homepage Hero | Features/Services | Content/Information | Footer/Contact |
+|---------------|-------------------|---------------------|----------------|
+| ![Website Image 1](assets/images/Websiteimage1.png) | ![Website Image 2](assets/images/Websiteimage2.png) | ![Website Image 3](assets/images/Websiteimage3.png) | ![Website Image 4](assets/images/Websiteimage4.png) |
   
 
 ---
