@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Edition - Patel's Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script defer src="../../assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../../index.html" class="logo">Patel's Store</a>
+            <div class="nav-links">
+                <a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 80px;">
+        <h1 class="section-title">Special Editions</h1>
+        <div class="grid-container">
+            <div class="card">
+                <h3 style="color:var(--primary);">Drone Camera</h3>
+                <div class="price">₹2500</div>
+                <button class="btn btn-primary" onclick="addToCart('Drone Camera', 2500)">Add to Cart</button>
+                <div style="margin-top:1rem;">
+                    <a href="drone.html" class="btn btn-primary" style="background:transparent; border:1px solid var(--primary); color:var(--primary);">For More Details &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="color:var(--primary);">Attachable Lens</h3>
+                <div class="price">₹4000</div>
+                <button class="btn btn-primary" onclick="addToCart('Attachable Lens', 4000)">Add to Cart</button>
+                <div style="margin-top:1rem;">
+                    <a href="lens.html" class="btn btn-primary" style="background:transparent; border:1px solid var(--primary); color:var(--primary);">For More Details &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function addToCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            if(cartItems.length >= 1) {
+                alert('You can only add 1 item to cart!');
+                return;
+            }
+            cartItems.push({ name: productName, price: price, timestamp: new Date().getTime() });
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert('Item added to cart!');
+            if(document.querySelector('.cart-count')) {
+                document.querySelector('.cart-count').textContent = cartItems.length;
+            }
+        }
+    </script>
+</body>
+</html>

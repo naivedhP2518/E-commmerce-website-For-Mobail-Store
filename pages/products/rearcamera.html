@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rear Cameras - Patel's Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script defer src="../../assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../../index.html" class="logo">Patel's Store</a>
+            <div class="nav-links">
+                <a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 80px;">
+        <h1 class="section-title">Rear Cameras</h1>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>12MP Dual</h3>
+                <div class="price">₹1500</div>
+                <button class="btn btn-primary" onclick="addToCart('12MP Dual', 1500)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>48MP Quad</h3>
+                <div class="price">₹2500</div>
+                <button class="btn btn-primary" onclick="addToCart('48MP Quad', 2500)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>64MP Triple</h3>
+                <div class="price">₹3000</div>
+                <button class="btn btn-primary" onclick="addToCart('64MP Triple', 3000)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>108MP Penta</h3>
+                <div class="price">₹4500</div>
+                <button class="btn btn-primary" onclick="addToCart('108MP Penta', 4500)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>200MP Ultra</h3>
+                <div class="price">₹6000</div>
+                <button class="btn btn-primary" onclick="addToCart('200MP Ultra', 6000)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>50MP Wide</h3>
+                <div class="price">₹3500</div>
+                <button class="btn btn-primary" onclick="addToCart('50MP Wide', 3500)">Add to Cart</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-camera-retro fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>32MP Telephoto</h3>
+                <div class="price">₹2800</div>
+                <button class="btn btn-primary" onclick="addToCart('32MP Telephoto', 2800)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function addToCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            if(cartItems.length >= 4) {
+                alert('Maximum 4 cameras can be added to cart!');
+                return;
+            }
+            cartItems.push({ name: productName, price: price, timestamp: new Date().getTime() });
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert('Item added to cart!');
+            if(document.querySelector('.cart-count')) {
+                document.querySelector('.cart-count').textContent = cartItems.length;
+            }
+        }
+    </script>
+</body>
+</html>

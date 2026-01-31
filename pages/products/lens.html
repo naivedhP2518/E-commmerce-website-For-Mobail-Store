@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Lenses - Patel's Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script defer src="../../assets/js/script.js"></script>
+    <style>
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .header-text {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .header-text h1 {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .header-text p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../../index.html" class="logo">Patel's Store</a>
+            <div class="nav-links">
+                <a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="header-text">
+            <h1>Pro Mobile Lenses</h1>
+            <p>Enhance your photography with our premium attachable lenses</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="card product-card">
+                <i class="fas fa-eye fa-4x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <div class="product-info">
+                    <h3>Wide Angle Lens</h3>
+                    <p style="margin: 1rem 0; color: #aaa; font-size: 0.9rem;">0.45x Wide Angle + 12.5x Macro Lens Kit. Perfect for landscapes and tiny details.</p>
+                    <div class="price" style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem;">₹1200</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="addToCart('Wide Angle Lens', 1200)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card product-card">
+                <i class="fas fa-telescope fa-4x" style="color: var(--primary); margin-bottom: 1.5rem;"></i> <!-- Updated icon since fa-optec is not standard free -->
+                <div class="product-info">
+                    <h3>Telephoto Zoom Lens</h3>
+                    <p style="margin: 1rem 0; color: #aaa; font-size: 0.9rem;">20x Optical Zoom Telephoto Lens. Capture distant subjects with crystal clarity.</p>
+                    <div class="price" style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem;">₹1800</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="addToCart('Telephoto Zoom Lens', 1800)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card product-card">
+                <i class="fas fa-fish fa-4x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <div class="product-info">
+                    <h3>Fisheye Lens</h3>
+                    <p style="margin: 1rem 0; color: #aaa; font-size: 0.9rem;">198° Fisheye Lens. Create fun and artistic circular images with a unique perspective.</p>
+                    <div class="price" style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem;">₹999</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="addToCart('Fisheye Lens', 999)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card product-card">
+                <i class="fas fa-infinity fa-4x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <div class="product-info">
+                    <h3>Anamorphic Lens</h3>
+                    <p style="margin: 1rem 0; color: #aaa; font-size: 0.9rem;">1.33x Anamorphic Lens. Cinematic widescreen video with horizontal lens flares.</p>
+                    <div class="price" style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem;">₹2500</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="addToCart('Anamorphic Lens', 2500)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+             <a href="custom.html" class="btn btn-primary" style="background: transparent; border: 1px solid var(--primary); color: var(--primary);">Back to Customization</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Naivedh's Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if(cartItems.length >= 4) {
+                alert('Maximum 4 items can be added to cart!');
+                return;
+            }
+            
+            cartItems.push({ 
+                name: productName, 
+                price: price,
+                timestamp: new Date().getTime()
+            });
+            
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert(productName + ' added to cart!');
+            
+            // Update cart count if referenced in script.js (if applicable)
+            if(typeof updateCartCount === 'function') updateCartCount();
+        }
+    </script>
+</body>
+</html>
