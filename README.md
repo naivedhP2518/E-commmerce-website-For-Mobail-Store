@@ -3,7 +3,7 @@
 A responsive and modern **E-commerce Website** designed with the help of **HTML, CSS, and JavaScript**.
 This project features a professional layout, smooth animations, and clean responsive design for mobile devices.
 
-LIVE🔴 🔗 **Live Demo:** (https://naivedhp2518.github.io/E-commmerce-website/)
+LIVE🔴 🔗 **Live Demo:** ([https://naivedhp2518.github.io/E-commmerce-website/](https://naivedhp2518.github.io/E-commmerce-website-For-Mobail-Store))
 
 ---
 
